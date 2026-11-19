@@ -1,0 +1,4 @@
+[template]
+description  = "Word counts, a parsed record with its error path, a UTC timestamp and a log sink with import mcpplibs.mwrap.abseil"
+default      = true
+post_message = "Run `mcpp run`."

@@ -1,0 +1,17 @@
+{
+  "upstream": "https://github.com/abseil/abseil-cpp/releases/download/20250512.1/abseil-cpp-20250512.1.tar.gz",
+  "upstream_sha256": "9b7a064305e9fd94d124ffa6cc358592eb42b5da588fb4e07d09254aa40086db",
+  "pruning": "Nothing of Abseil is vendored: the library is compat.abseil 20250512.1, built from this same release asset. Its README and license are retained here; tools/surface.py reads the public headers from the same asset (fetched into target/upstream and checked against upstream_sha256).",
+  "documents": [
+    {
+      "path": "upstream/abseil-cpp/README.md",
+      "source": "https://github.com/abseil/abseil-cpp/blob/20250512.1/README.md",
+      "sha256": "ef96eba1d2e35b51a36ddd9cff4b1eac25a9702341c00ef0c19d601a37516d10"
+    },
+    {
+      "path": "upstream/abseil-cpp/LICENSE",
+      "source": "https://github.com/abseil/abseil-cpp/blob/20250512.1/LICENSE",
+      "sha256": "c79a7fea0e3cac04cd43f20e7b648e5a0ff8fa5344e644b0ee09ca1162b62747"
+    }
+  ]
+}
