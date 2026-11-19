@@ -1,0 +1,46 @@
+# Module wrapper; upstream API preserved. Policy: mcpp-index/docs/mwrap.md.
+[package]
+namespace   = "mcpplibs.mwrap"
+name        = "abseil"
+version     = "20250512.1"
+description = "Abseil LTS 20250512.1 C++ modules for mcpp (import mcpplibs.mwrap.abseil;): strings, containers, hashing, status, time, synchronization, logging, flags and random, over compat.abseil; its macros through <mwrap/abseil/macros.hpp>"
+license     = "Apache-2.0"
+authors     = ["mcpp-community"]
+repo        = "https://github.com/mcpplibs/abseil-m"
+platforms   = ["linux", "macos", "windows", "emscripten"]
+
+[targets.abseil]
+kind = "lib"
+
+[build]
+# The modules only: the library is compat.abseil, built from the same release.
+# Each src/<group>.cppm is mcpplibs.mwrap.abseil.<group> (written by
+# tools/surface.py); src/abseil.cppm re-exports them all.
+sources      = ["src/*.cppm"]
+# <mwrap/abseil/macros.hpp>: Abseil's macros (LOG, CHECK, ABSL_FLAG …).
+include_dirs = ["include"]
+
+[dependencies]
+compat.abseil = "20250512.1"
+
+[dev-dependencies]
+compat.gtest = "1.15.2"
+
+[package.metadata.mwrap]
+upstream-version = "20250512.1"
+
+[[runtime.deploy]]
+from = "LICENSE"
+to   = "licenses/abseil"
+
+[[runtime.deploy]]
+from = "NOTICE"
+to   = "licenses/abseil"
+
+[[runtime.deploy]]
+from = "upstream/abseil-cpp/README.md"
+to   = "licenses/abseil/upstream/abseil-cpp"
+
+[[runtime.deploy]]
+from = "upstream/abseil-cpp/LICENSE"
+to   = "licenses/abseil/upstream/abseil-cpp"
